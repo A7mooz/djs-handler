@@ -6,6 +6,7 @@
     "type": "module",
     "bin": "dist/index.js",
     "scripts": {
+        "build": "tsc",
         "dev": "tsc && node .",
         "pretty": "prettier -w .",
         "lint": "eslint --fix src/**/*.ts"
