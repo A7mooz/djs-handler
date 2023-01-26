@@ -1,4 +1,4 @@
-import { Client, Collection, ColorResolvable } from 'discord.js';
+import { Client, Collection } from 'discord.js';
 import mongoose from 'mongoose';
 import { optionsClient, optionsInstance } from '../config.js';
 import { handleListeners, initiateCommands } from '../registry/index.js';

@@ -1,4 +1,4 @@
-import { Command, CommandType, Listener } from '#handler';
+import { Command, Listener } from '#handler';
 import { InteractionTypes, Send } from '#types/command';
 import { CacheType } from 'discord.js';
 import conditions from '../preconditions/index.js';

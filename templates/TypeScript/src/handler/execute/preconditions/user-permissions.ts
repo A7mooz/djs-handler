@@ -1,5 +1,4 @@
 import { BaseInteraction, Interaction, Message, roleMention } from 'discord.js';
-import { Command, CommandType } from '#handler';
 import { AnyCommand } from './index.js';
 
 export default function (ctx: Message | Interaction, command: AnyCommand) {

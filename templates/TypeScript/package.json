@@ -10,9 +10,9 @@
     "scripts": {
         "build": "rimraf dist && tsc",
         "start": "node .",
-        "dev": "pnpm build --inlineSourceMap && pnpm start",
-        "watch": "pnpm build && nodemon -e ts,json -x  \"tsc -b && node .\"",
-        "pretty": "prettier -w  **/*.{ts,json,yml,yaml}"
+        "dev": "tsc --inlineSourceMap && node .",
+        "watch": "nodemon -e ts,json -x  \"tsc -b && node .\"",
+        "pretty": "prettier -w  ."
     },
     "devDependencies": {
         "@types/ms": "^0.7.31",
