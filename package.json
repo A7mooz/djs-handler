@@ -1,5 +1,5 @@
 {
-    "name": "djs-handler",
+    "name": "@a7mooz/djs-handler",
     "version": "0.0.1",
     "description": "Strongly typed discord.js handler based on WOKCommands",
     "main": "dist/index.js",
