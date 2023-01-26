@@ -16,11 +16,11 @@ specifiers:
   inquirer: ^9.1.4
   nanospinner: ^1.1.0
   prettier: ^2.8.3
+  rimraf: ^4.1.2
   typescript: ^4.9.4
   validate-npm-package-name: ^5.0.0
 
 dependencies:
-  '@types/validate-npm-package-name': 4.0.0
   chalk: 5.2.0
   chalk-animation: 2.0.3
   figlet: 1.5.2
@@ -34,10 +34,12 @@ devDependencies:
   '@types/figlet': 1.5.5
   '@types/gradient-string': 1.1.2
   '@types/inquirer': 9.0.3
+  '@types/validate-npm-package-name': 4.0.0
   '@typescript-eslint/eslint-plugin': 5.49.0_iu322prlnwsygkcra5kbpy22si
   '@typescript-eslint/parser': 5.49.0_7uibuqfxkfaozanbtbziikiqje
   eslint: 8.32.0
   prettier: 2.8.3
+  rimraf: 4.1.2
   typescript: 4.9.4
 
 packages:
@@ -173,7 +175,7 @@ packages:
 
   /@types/validate-npm-package-name/4.0.0:
     resolution: {integrity: sha512-RpO62vB2lkjEkyLbwTheA2+uwYmtVMWTr/kWRI++UAgVdZqNqdAuIQl/SxBCGeMKfdjWaXPbyhZbiCc4PAj+KA==}
-    dev: false
+    dev: true
 
   /@typescript-eslint/eslint-plugin/5.49.0_iu322prlnwsygkcra5kbpy22si:
     resolution: {integrity: sha512-IhxabIpcf++TBaBa1h7jtOWyon80SXPRLDq0dVz5SLFC/eW6tofkw/O7Ar3lkx5z5U6wzbKDrl2larprp5kk5Q==}
@@ -1386,6 +1388,12 @@ packages:
     hasBin: true
     dependencies:
       glob: 7.2.3
+    dev: true
+
+  /rimraf/4.1.2:
+    resolution: {integrity: sha512-BlIbgFryTbw3Dz6hyoWFhKk+unCcHMSkZGrTFVAx2WmttdBSonsdtRlwiuTbDqTKr+UlXIUqJVS4QT5tUzGENQ==}
+    engines: {node: '>=14'}
+    hasBin: true
     dev: true
 
   /run-async/2.4.1:

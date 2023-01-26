@@ -21,5 +21,6 @@ export async function copy(template: string, path: string) {
         })
         .catch((err: Error) => {
             spinner.error({ text: err.toString() });
+            process.exit(2);
         });
 }

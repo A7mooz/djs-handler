@@ -2,7 +2,6 @@
     "compilerOptions": {
         "incremental": true,
         "tsBuildInfoFile": "dist/tsconfig.tsbuildinfo",
-
         "target": "ESNext",
         "module": "NodeNext",
         "rootDir": "src",
