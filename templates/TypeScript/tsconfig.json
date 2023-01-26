@@ -1,0 +1,25 @@
+{
+    "compilerOptions": {
+        "target": "ESNext",
+        "module": "Node16",
+        "rootDir": "src",
+        "baseUrl": "src",
+        "paths": {
+            "#handler": ["handler/index.js"],
+            "#types/*": ["handler/types/*.js"]
+        },
+        "resolveJsonModule": true,
+        "outDir": "dist",
+        "esModuleInterop": true,
+        "forceConsistentCasingInFileNames": true,
+        "noImplicitAny": true,
+        "strict": true,
+        "incremental": true,
+        "alwaysStrict": true,
+        "strictNullChecks": true,
+        "skipLibCheck": true,
+        "useDefineForClassFields": false,
+        "tsBuildInfoFile": "dist/tsconfig.tsbuildinfo",
+        "types": ["node", "ms"]
+    }
+}
