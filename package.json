@@ -7,9 +7,9 @@
     "bin": "dist/index.js",
     "scripts": {
         "build": "rimraf dist && tsc",
-        "clean": "rimraf templates/TypeScript/{node_modules,pnpm-lock.yaml,yarn.lock,package-lock.json,dist}",
+        "clean": "node dist/helpers/clean",
         "start": "node .",
-        "dev": "pnpm clean && pnpm build --inlineSourceMap && pnpm start",
+        "dev": "pnpm build --inlineSourceMap && pnpm clean && pnpm start",
         "pretty": "prettier -w .",
         "lint": "eslint --fix src/**/*.ts",
         "prepublish": "pnpm build"
@@ -39,6 +39,7 @@
         "validate-npm-package-name": "^5.0.0"
     },
     "devDependencies": {
+        "@changesets/cli": "^2.26.0",
         "@types/figlet": "^1.5.5",
         "@types/inquirer": "^9.0.3",
         "@types/validate-npm-package-name": "^4.0.0",
