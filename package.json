@@ -1,7 +1,7 @@
 {
     "name": "@a7mooz/create-djs-handler",
     "version": "0.0.4",
-    "description": "Strongly typed discord.js handler based on WOKCommands",
+    "description": "Strongly typed discord.js handler inspired by WOKCommands",
     "main": "dist/index.js",
     "type": "module",
     "bin": "dist/index.js",
