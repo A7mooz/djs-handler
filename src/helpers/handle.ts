@@ -27,9 +27,8 @@ export async function handle(answers: ExpectedAnswers) {
     );
 
     console.log(chalk.blueBright('?'), chalk.bold('Next Steps!'));
-    console.log(`\t> cd ${path.relative(process.cwd(), projectPath)}`);
-
     console.log(`\t> // Set your environment variables in .env (example in .env.example)`);
+    console.log(`\t> cd ${path.relative(process.cwd(), projectPath)}`);
 
     if (pm) console.log(`\t> ${pm} run dev`);
     else {
