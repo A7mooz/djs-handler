@@ -3,9 +3,11 @@ import { copy } from './copy.js';
 import { install } from './package-manager.js';
 import { templates } from './templates.js';
 import path from 'path';
+import chalk from 'chalk';
 
 export async function handle(answers: ExpectedAnswers) {
-    const projectPath = path.resolve(answers.name);
+    const projectName = answers.name;
+    const projectPath = path.resolve(projectName);
 
     // TODO add mutpile templates to choose from
     const template =
@@ -13,8 +15,25 @@ export async function handle(answers: ExpectedAnswers) {
             ? answers.template
             : templates[0];
 
-    await Promise.all([
-        await copy(template, projectPath),
-        await install(answers.manager, projectPath),
-    ]);
+    const pm = answers.manager.startsWith('none') ? null : answers.manager;
+
+    await Promise.all([await copy(template, projectPath), await install(pm, projectPath)]);
+
+    console.log(
+        chalk.greenBright('√'),
+        chalk.bold('Created discord.js project'),
+        chalk.gray('»'),
+        chalk.greenBright(projectName),
+    );
+
+    console.log(chalk.blueBright('?'), chalk.bold('Next Steps!'));
+    console.log(`\t> cd ${path.relative(process.cwd(), projectPath)}`);
+
+    console.log(`\t> // Set your environment variables in .env (example in .env.example)`);
+
+    if (pm) console.log(`\t> ${pm} run dev`);
+    else {
+        console.log('\t> npm install');
+        console.log('\t> npm run dev');
+    }
 }
