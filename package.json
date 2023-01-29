@@ -12,7 +12,7 @@
         "dev": "pnpm build --inlineSourceMap && pnpm clean && pnpm start",
         "pretty": "prettier -w .",
         "lint": "eslint --fix src/**/*.ts",
-        "prepublish": "pnpm pretty && pnpm build"
+        "release": "pnpm pretty && pnpm build && changeset publish --access public"
     },
     "repository": {
         "type": "git",
