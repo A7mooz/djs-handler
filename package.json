@@ -1,6 +1,6 @@
 {
     "name": "@a7mooz/create-djs-handler",
-    "version": "0.1.2",
+    "version": "0.1.0",
     "description": "Strongly typed discord.js handler inspired by WOKCommands",
     "main": "dist/index.js",
     "bin": "dist/index.js",
@@ -12,7 +12,7 @@
         "dev": "pnpm build --inlineSourceMap && pnpm clean && pnpm start",
         "pretty": "prettier -w .",
         "lint": "eslint --fix src/**/*.ts",
-        "release": "pnpm pretty && pnpm build && changeset publish --access public"
+        "release": "pnpm pretty && pnpm build && changeset publish"
     },
     "repository": {
         "type": "git",
