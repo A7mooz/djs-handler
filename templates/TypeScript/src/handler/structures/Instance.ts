@@ -54,7 +54,7 @@ export class CustomInstance<Ready extends boolean = boolean> {
 
         await initiateCommands(this);
 
-        return this;
+        return <CustomInstance<true>>this;
     }
 
     async mongo(uri?: string) {

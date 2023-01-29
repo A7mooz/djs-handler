@@ -1,5 +1,17 @@
 # @a7mooz/create-djs-handler
 
+## 0.1.2
+
+### Patch Changes
+
+-   ba0be4a: Cleaner code and more examples
+
+## 0.1.1
+
+### Patch Changes
+
+-   5924191: Cleaner code and more examples
+
 ## 0.1.0
 
 ### Minor Changes

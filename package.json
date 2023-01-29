@@ -3,8 +3,8 @@
     "version": "0.1.0",
     "description": "Strongly typed discord.js handler inspired by WOKCommands",
     "main": "dist/index.js",
-    "type": "module",
     "bin": "dist/index.js",
+    "type": "module",
     "scripts": {
         "build": "rimraf dist && tsc",
         "clean": "node dist/helpers/clean",
@@ -12,7 +12,7 @@
         "dev": "pnpm build --inlineSourceMap && pnpm clean && pnpm start",
         "pretty": "prettier -w .",
         "lint": "eslint --fix src/**/*.ts",
-        "prepublish": "pnpm build"
+        "release": "pnpm pretty && pnpm build && changeset publish"
     },
     "repository": {
         "type": "git",
