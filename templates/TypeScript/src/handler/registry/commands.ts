@@ -44,6 +44,8 @@ export async function handleCommands(instance: CustomInstance) {
                     writable: false,
                 });
 
+            command.instance = instance;
+
             if (instance.commands.has(command.name)) {
                 process.emitWarning(`Detected douplicate of the command \`${command.name}\`.`, {
                     detail: "You can't have mutiple commands with the same name.",
@@ -90,14 +92,22 @@ export async function registerCommands(instance: CustomInstance) {
         body: client.options.jsonTransformer?.(data),
     });
 
+    console.log(`[ Command Handler ] - Synced ${data.length} global commands`);
+
     for (const [guildId, guild] of client.guilds.cache) {
         const commands = guildCommands.filter((cmd) => cmd.guilds.includes(guild.id));
         if (!commands.size) {
-            if (instance.options.testGuildIds.includes(guild.id)) guild.commands.set([]);
+            if (instance.options.testGuildIds.includes(guild.id)) {
+                await guild.commands.set([]);
+
+                console.log(`[ ${guild.name} ] - Removed commands because it's a test guild`);
+            }
             continue;
         }
 
         const data = commands.map(map).flat();
+
+        console.log(`[ ${guild.name} ] - Synced ${data.length} commands`);
 
         await client.rest.put(Routes.applicationGuildCommands(applicationId, guildId), {
             body: client.options.jsonTransformer?.(data),
