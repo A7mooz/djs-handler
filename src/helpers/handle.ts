@@ -1,4 +1,4 @@
-import { ExpectedAnswers } from '../index.js';
+import { ExpectedAnswers } from './prompt.js';
 import { copy } from './copy.js';
 import { install } from './package-manager.js';
 import { templates } from './templates.js';
