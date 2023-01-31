@@ -26,7 +26,7 @@ export async function handleCommands(instance: CustomInstance) {
         for (const file of files) {
             if (file.isDirectory()) {
                 await readFolder(join(dir, file.name));
-                return;
+                continue;
             }
 
             const { default: command } = await import(

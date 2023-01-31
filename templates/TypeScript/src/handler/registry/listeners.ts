@@ -15,7 +15,7 @@ export async function handleListeners(instance: CustomInstance, innerDir?: strin
         for (const file of files) {
             if (file.isDirectory()) {
                 await readFolder(join(dir, file.name));
-                return;
+                continue;
             }
 
             const { default: listener } = (await import(
