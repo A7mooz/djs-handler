@@ -1,5 +1,11 @@
 # @a7mooz/create-djs-handler
 
+## 0.1.4
+
+### Patch Changes
+
+-   886b439: Removed the command name from the text in text commands
+
 ## 0.1.3
 
 ### Patch Changes
