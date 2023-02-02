@@ -12,13 +12,15 @@ export default new Listener({
 
         if (!message.content.startsWith(prefix)) return;
 
-        const text = message.content.replace(prefix, '').trim();
+        const content = message.content.replace(prefix, '').trim();
 
-        const args = text.split(/[ ]+/);
+        const args = content.split(/[ ]+/);
 
         const name = args.shift();
 
         if (!name) return;
+
+        const text = content.replace(name, '').trim();
 
         const command = <Command<CommandType.Text> | undefined>(
             instance.commands.find(
