@@ -1,1 +1,4 @@
 dist/
+.changeset/
+CHANGELOG.md
+pnpm-lock.yaml
