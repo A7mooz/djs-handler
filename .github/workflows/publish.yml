@@ -29,4 +29,4 @@ jobs:
 
             - name: Publish
               if: steps.changesets.outputs.hasChangesets == 'false'
-              run: yarn publish
+              run: pnpm publish
