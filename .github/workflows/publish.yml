@@ -25,8 +25,9 @@ jobs:
               uses: changesets/action@v1
               env:
                   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-                  NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
             - name: Publish
               if: steps.changesets.outputs.hasChangesets == 'false'
               run: pnpm publish
+              env:
+                  NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
