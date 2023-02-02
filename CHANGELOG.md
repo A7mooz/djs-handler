@@ -1,5 +1,11 @@
 # @a7mooz/create-djs-handler
 
+## 0.1.5
+
+### Patch Changes
+
+-   14e85df: Fixed already replied error on defer reply
+
 ## 0.1.4
 
 ### Patch Changes
