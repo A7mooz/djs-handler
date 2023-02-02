@@ -1,5 +1,11 @@
 # @a7mooz/create-djs-handler
 
+## 0.1.3
+
+### Patch Changes
+
+-   8fd4d2c: Allowing folder name to have uppercase charecters
+
 ## 0.1.2
 
 ### Patch Changes
