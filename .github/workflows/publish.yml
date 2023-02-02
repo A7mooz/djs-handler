@@ -18,6 +18,8 @@ jobs:
               with:
                   node-version: 18.x
                   cache: 'pnpm'
+              env:
+                  NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
 
             - run: pnpm install --frozen-lockfile
             - name: Create Release Pull Request or Publish
@@ -28,6 +30,6 @@ jobs:
 
             - name: Publish
               if: steps.changesets.outputs.hasChangesets == 'false'
-            - run: npm publish
+              run: npm publish
               env:
-                  NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+                  NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
