@@ -43,7 +43,7 @@ export default new Listener({
                 ...options,
             } as typeof options;
 
-            if (interaction.replied) {
+            if (interaction.replied || interaction.deferred) {
                 if (options.new) return interaction.followUp(options);
                 else return interaction.editReply(options);
             }
