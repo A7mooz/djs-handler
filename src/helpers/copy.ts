@@ -24,7 +24,7 @@ export async function copy(template: string, path: string) {
                 await fs.readFile(packageJsonUrl, 'utf-8'),
             );
 
-            pkg.name = name;
+            pkg.name = name.toLowerCase();
 
             await fs.writeFile(packageJsonUrl, JSON.stringify(pkg, null, 4));
 

@@ -22,10 +22,10 @@ export async function ask(): Promise<ExpectedAnswers> {
             message: 'What is your project name',
             default: 'my-bot',
             validate(input: string) {
-                return validate(input).errors?.[0] ?? true;
+                return validate(input).errors?.join('\n') ?? true;
             },
             transformer(input: string) {
-                return input.toLowerCase().replaceAll(/\s+/g, '');
+                return input.replaceAll(/\s+/g, '');
             },
             prefix: chalk.cyan('?'),
             suffix: '?',
