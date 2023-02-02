@@ -28,7 +28,7 @@ jobs:
 
             - name: Publish
               if: steps.changesets.outputs.hasChangesets == 'false'
-              uses: znck/pnpm@v0.1.0-alpha.1
+              uses: actions/npm@master
               with:
                   args: 'publish --access public'
               env:
