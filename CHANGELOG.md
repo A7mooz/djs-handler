@@ -1,5 +1,11 @@
 # @a7mooz/create-djs-handler
 
+## 0.1.6
+
+### Patch Changes
+
+-   a1b5315: Fixed taking the bot permissions as member's
+
 ## 0.1.5
 
 ### Patch Changes
