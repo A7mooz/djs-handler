@@ -18,7 +18,7 @@ export default function (ctx: Message | Interaction, command: AnyCommand) {
     let roles: Set<string>;
 
     if (ctx instanceof BaseInteraction) {
-        permissions = ctx.appPermissions;
+        permissions = ctx.memberPermissions;
         if (Array.isArray(member.roles)) roles = new Set(member.roles);
         else roles = new Set(member.roles.cache.keys());
     } else roles = new Set(ctx.member?.roles.cache.keys());
