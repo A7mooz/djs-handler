@@ -1,5 +1,11 @@
 # @a7mooz/create-djs-handler
 
+## 0.1.8
+
+### Patch Changes
+
+-   8621b53: Fixed ignore tsconfig to only the root folder
+
 ## 0.1.7
 
 ### Patch Changes
