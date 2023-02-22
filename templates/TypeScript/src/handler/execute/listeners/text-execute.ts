@@ -6,6 +6,8 @@ import conditions from '../preconditions/index.js';
 export default new Listener({
     event: 'messageCreate',
     execute(message, instance) {
+        if (message.author.bot) return;
+
         const { client } = message;
 
         const prefix = client.user.toString();
