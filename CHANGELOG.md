@@ -1,5 +1,12 @@
 # @a7mooz/create-djs-handler
 
+## 0.1.7
+
+### Patch Changes
+
+-   138afae: Ignored bots
+-   b1eface: ignored unnecessary files
+
 ## 0.1.6
 
 ### Patch Changes
