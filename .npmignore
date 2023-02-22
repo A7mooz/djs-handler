@@ -2,5 +2,5 @@ src/
 .changeset/
 .github/
 pnpm-lock.yml
-tsconfig.json
+/tsconfig.json
 .eslintrc.json
