@@ -5,6 +5,7 @@
     "main": "dist/index.js",
     "bin": "dist/index.js",
     "type": "module",
+    "private": false,
     "scripts": {
         "build": "rimraf dist && tsc",
         "clean": "node dist/helpers/clean",
@@ -12,7 +13,7 @@
         "dev": "pnpm build --inlineSourceMap && pnpm clean && pnpm start",
         "pretty": "prettier -w .",
         "lint": "eslint --fix src/**/*.ts",
-        "prepublish": "pnpm build"
+        "release": "pnpm lint && pnpm build && changeset publish"
     },
     "repository": {
         "type": "git",
