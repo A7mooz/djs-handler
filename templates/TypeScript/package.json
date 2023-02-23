@@ -31,6 +31,9 @@
     "resolutions": {
         "discord-api-types": "0.37.20"
     },
+    "overrides": {
+        "discord-api-types": "0.37.20"
+    },
     "prettier": {
         "semi": true,
         "trailingComma": "all",

@@ -1,6 +1,7 @@
 import { createSpinner } from 'nanospinner';
 import { exec } from 'child_process';
 import { promisify } from 'util';
+import { PM } from '../types.js';
 
 /**
  *
@@ -8,7 +9,7 @@ import { promisify } from 'util';
  *
  * @param path The path to the process
  */
-export async function install(pm: string | null, path: string) {
+export async function install(pm: PM, path: string) {
     if (!pm) return;
 
     const spinner = createSpinner('Installing Packages').start();

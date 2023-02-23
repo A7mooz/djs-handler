@@ -1,7 +1,8 @@
-import { createSpinner } from 'nanospinner';
-import { join, basename } from 'path';
-import { templatesDir } from './templates.js';
 import fs from 'fs/promises';
+import { createSpinner } from 'nanospinner';
+import { basename, join } from 'path';
+import { PM } from '../types.js';
+import { templatesDir } from './templates.js';
 
 /**
  *
@@ -9,7 +10,7 @@ import fs from 'fs/promises';
  *
  * @param path The path to the process
  */
-export async function copy(template: string, path: string) {
+export async function copy(template: string, path: string, pm: PM) {
     const spinner = createSpinner('Copying template').start();
 
     const name = basename(path);
@@ -25,6 +26,8 @@ export async function copy(template: string, path: string) {
             );
 
             pkg.name = name.toLowerCase();
+            if (pm === 'npm') delete pkg.resolutions;
+            else if (pm) delete pkg.overrides;
 
             await fs.writeFile(packageJsonUrl, JSON.stringify(pkg, null, 4));
 

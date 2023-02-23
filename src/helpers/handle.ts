@@ -1,9 +1,12 @@
-import { ExpectedAnswers } from './prompt.js';
+import chalk from 'chalk';
+import path from 'path';
+import { ExpectedAnswers, None } from '../types.js';
 import { copy } from './copy.js';
 import { install } from './package-manager.js';
+import { Managers } from './prompt.js';
 import { templates } from './templates.js';
-import path from 'path';
-import chalk from 'chalk';
+
+const none = Managers.at(-1) as None;
 
 export async function handle(answers: ExpectedAnswers) {
     const projectName = answers.name;
@@ -15,9 +18,10 @@ export async function handle(answers: ExpectedAnswers) {
             ? answers.template
             : templates[0];
 
-    const pm = answers.manager.startsWith('none') ? null : answers.manager;
+    const pm = answers.manager === none ? null : answers.manager;
 
-    await Promise.all([await copy(template, projectPath), await install(pm, projectPath)]);
+    if (pm)
+        await Promise.all([await copy(template, projectPath, pm), await install(pm, projectPath)]);
 
     console.log(
         chalk.greenBright('√'),

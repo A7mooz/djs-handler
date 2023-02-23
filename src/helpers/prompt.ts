@@ -1,13 +1,11 @@
 import chalk from 'chalk';
+import figlet from 'figlet';
+import { readFileSync } from 'fs';
 import inquirer from 'inquirer';
 import validate from 'validate-npm-package-name';
-import { readFileSync } from 'fs';
-import figlet from 'figlet';
+import { ExpectedAnswers } from '../types.js';
 
-export type ExpectedAnswers = {
-    name: string;
-    manager: string;
-};
+export const Managers = ['npm', 'pnpm', 'yarn', "none - don't install packages"] as const;
 
 export async function ask(): Promise<ExpectedAnswers> {
     const { version }: { version: string } = JSON.parse(
@@ -35,7 +33,7 @@ export async function ask(): Promise<ExpectedAnswers> {
             message: 'Which package manage would you use',
             type: 'list',
             default: 'npm',
-            choices: ['npm', 'pnpm', 'yarn', "none - don't install packages"],
+            choices: Managers,
             prefix: chalk.cyan('>'),
             suffix: '?',
         },

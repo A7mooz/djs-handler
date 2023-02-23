@@ -1,7 +1,7 @@
 import fs from 'fs';
-import { join, dirname } from 'path';
+import { dirname, join } from 'path';
 import { fileURLToPath } from 'url';
 
 export const templatesDir = join(fileURLToPath(dirname(import.meta.url)), '../..', 'templates');
 
-export const templates = fs.readdirSync(templatesDir);
+export const templates = Object.freeze(fs.readdirSync(templatesDir));
