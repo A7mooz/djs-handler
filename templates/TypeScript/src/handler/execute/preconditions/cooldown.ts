@@ -1,12 +1,11 @@
 import { Collection, Interaction, Message, time } from 'discord.js';
-import { addMilliseconds, isFuture, isPast } from 'date-fns';
 import { AnyCommand } from './index.js';
 import ms from 'ms';
 
 const cache = new Collection<string, Date>();
 
 setInterval(() => {
-    cache.sweep((v) => isPast(v));
+    cache.sweep((v) => v < new Date());
 }, ms('1m'));
 
 export default function (ctx: Message | Interaction, command: AnyCommand) {
@@ -20,7 +19,7 @@ export default function (ctx: Message | Interaction, command: AnyCommand) {
 
     const cooldown = cache.get(cooldownStr);
 
-    if (cooldown && isFuture(cooldown))
+    if (cooldown && cooldown > new Date())
         return `You are being too fast, you can reuse the command ${time(cooldown, 'R')}`;
-    else cache.set(cooldownStr, addMilliseconds(new Date(), command.cooldown));
+    else cache.set(cooldownStr, new Date(Date.now() + command.cooldown));
 }
