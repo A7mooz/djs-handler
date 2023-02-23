@@ -9,11 +9,12 @@
     "scripts": {
         "build": "rimraf dist && tsc",
         "clean": "node dist/helpers/clean",
+        "check-templates": "cd templates/TypeScript && pnpm i --silent && pnpm build",
         "start": "node .",
         "dev": "pnpm build --inlineSourceMap && pnpm clean && pnpm start",
         "pretty": "prettier -w .",
         "lint": "eslint --fix src/**/*.ts",
-        "release": "pnpm lint && pnpm build && changeset publish"
+        "release": "pnpm lint && pnpm build && pnpm check-templates && pnpm clean && changeset publish"
     },
     "repository": {
         "type": "git",
