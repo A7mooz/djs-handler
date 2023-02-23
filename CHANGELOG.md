@@ -1,5 +1,12 @@
 # @a7mooz/create-djs-handler
 
+## 0.1.9
+
+### Patch Changes
+
+-   7fdce82: Dropping date-fns to reduce the packages
+-   fb2944c: Updated deps for the template and fixed incompatiblity error
+
 ## 0.1.8
 
 ### Patch Changes
