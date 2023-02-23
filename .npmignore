@@ -1,0 +1,9 @@
+src/
+.changeset/
+.github/
+pnpm-lock.yml
+/tsconfig.json
+.eslintrc.json
+tsconfig.tsbuildinfo
+/.prettierignore
+CHANGELOG.md
