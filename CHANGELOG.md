@@ -1,5 +1,11 @@
 # @a7mooz/create-djs-handler
 
+## 0.1.10
+
+### Patch Changes
+
+-   9241d04: Added types and add overrides to fix the incompatibility errors for npm
+
 ## 0.1.9
 
 ### Patch Changes
