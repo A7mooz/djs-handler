@@ -14,6 +14,7 @@ specifiers:
   nanospinner: ^1.1.0
   prettier: ^2.8.3
   rimraf: ^4.1.2
+  ts-toolbelt: ^9.6.0
   typescript: ^4.9.5
   validate-npm-package-name: ^5.0.0
 
@@ -34,6 +35,7 @@ devDependencies:
   eslint: 8.33.0
   prettier: 2.8.3
   rimraf: 4.1.2
+  ts-toolbelt: 9.6.0
   typescript: 4.9.5
 
 packages:
@@ -2464,6 +2466,10 @@ packages:
   /trim-newlines/3.0.1:
     resolution: {integrity: sha512-c1PTsA3tYrIsLGkJkzHF+w9F2EyxfXGo4UyJc4pFL++FMjnq0HJS69T3M7d//gKrFKwy429bouPescbjecU+Zw==}
     engines: {node: '>=8'}
+    dev: true
+
+  /ts-toolbelt/9.6.0:
+    resolution: {integrity: sha512-nsZd8ZeNUzukXPlJmTBwUAuABDe/9qtVDelJeT/qW0ow3ZS3BsQJtNkan1802aM9Uf68/Y8ljw86Hu0h5IUW3w==}
     dev: true
 
   /tslib/1.14.1:
