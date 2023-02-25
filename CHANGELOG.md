@@ -1,5 +1,11 @@
 # @a7mooz/create-djs-handler
 
+## 0.1.12
+
+### Patch Changes
+
+-   5fb402e: Fixed unkown command error
+
 ## 0.1.11
 
 ### Patch Changes
