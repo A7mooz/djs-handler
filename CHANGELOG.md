@@ -1,5 +1,11 @@
 # @a7mooz/create-djs-handler
 
+## 0.1.11
+
+### Patch Changes
+
+-   7d15692: Refactor + fixed bugs
+
 ## 0.1.10
 
 ### Patch Changes
