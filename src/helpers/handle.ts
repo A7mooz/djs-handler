@@ -1,12 +1,9 @@
 import chalk from 'chalk';
 import path from 'path';
-import { ExpectedAnswers, None } from '../types.js';
+import { ExpectedAnswers } from '../types.js';
 import { copy } from './copy.js';
-import { install } from './package-manager.js';
-import { Managers } from './prompt.js';
+import { install, PM } from './package-manager.js';
 import { templates } from './templates.js';
-
-const none = Managers.at(-1) as None;
 
 export async function handle(answers: ExpectedAnswers) {
     const projectName = answers.name;
@@ -18,10 +15,11 @@ export async function handle(answers: ExpectedAnswers) {
             ? answers.template
             : templates[0];
 
-    const pm = answers.manager === none ? null : answers.manager;
+    const pm = answers.manager;
 
-    if (pm)
-        await Promise.all([await copy(template, projectPath, pm), await install(pm, projectPath)]);
+    await copy(template, projectPath, answers.manager);
+
+    if (pm !== PM.none) install(pm, projectPath);
 
     console.log(
         chalk.greenBright('√'),
@@ -34,7 +32,7 @@ export async function handle(answers: ExpectedAnswers) {
     console.log(`\t> // Set your environment variables in .env (example in .env.example)`);
     console.log(`\t> cd ${path.relative(process.cwd(), projectPath)}`);
 
-    if (pm) console.log(`\t> ${pm} run dev`);
+    if (pm !== PM.none) console.log(`\t> ${pm} run dev`);
     else {
         console.log('\t> npm install');
         console.log('\t> npm run dev');

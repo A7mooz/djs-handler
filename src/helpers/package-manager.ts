@@ -1,7 +1,13 @@
 import { createSpinner } from 'nanospinner';
 import { exec } from 'child_process';
 import { promisify } from 'util';
-import { PM } from '../types.js';
+
+export enum PM {
+    npm,
+    yarn,
+    pnpm,
+    none,
+}
 
 /**
  *
@@ -9,12 +15,10 @@ import { PM } from '../types.js';
  *
  * @param path The path to the process
  */
-export async function install(pm: PM, path: string) {
-    if (!pm) return;
-
+export async function install(pm: Exclude<PM, PM.none>, path: string) {
     const spinner = createSpinner('Installing Packages').start();
 
-    return await promisify(exec)(`cd ${path} && ${pm} ${pm !== 'yarn' ? 'install' : ''}`)
+    return await promisify(exec)(`cd ${path} && ${pm} ${pm !== PM.yarn ? 'install' : ''}`)
         .then((value) => {
             spinner.success();
             return value;
@@ -23,4 +27,19 @@ export async function install(pm: PM, path: string) {
             spinner.error({ text: err.toString() });
             process.exit(2);
         });
+}
+
+const Managers = ['npm', 'pnpm', 'yarn'] as const;
+
+export function getCurrentPackageManager() {
+    const defaultManager = PM.npm;
+
+    const userAgent = process.env.npm_config_user_agent;
+    if (!userAgent) {
+        return defaultManager;
+    }
+
+    const manager = Managers.find((pm) => userAgent.startsWith(pm)) ?? Managers[defaultManager];
+
+    return PM[manager];
 }

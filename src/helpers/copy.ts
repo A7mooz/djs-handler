@@ -1,7 +1,7 @@
 import fs from 'fs/promises';
 import { createSpinner } from 'nanospinner';
 import { basename, join } from 'path';
-import { PM } from '../types.js';
+import { PM } from './package-manager.js';
 import { templatesDir } from './templates.js';
 
 /**
@@ -26,8 +26,8 @@ export async function copy(template: string, path: string, pm: PM) {
             );
 
             pkg.name = name.toLowerCase();
-            if (pm === 'npm') delete pkg.resolutions;
-            else if (pm) delete pkg.overrides;
+            if (pm === PM.npm) delete pkg.resolutions;
+            else if (pm !== PM.none) delete pkg.overrides;
 
             await fs.writeFile(packageJsonUrl, JSON.stringify(pkg, null, 4));
 

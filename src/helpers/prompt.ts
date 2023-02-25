@@ -4,8 +4,7 @@ import { readFileSync } from 'fs';
 import inquirer from 'inquirer';
 import validate from 'validate-npm-package-name';
 import { ExpectedAnswers } from '../types.js';
-
-export const Managers = ['npm', 'pnpm', 'yarn', "none - don't install packages"] as const;
+import { getCurrentPackageManager, PM } from './package-manager.js';
 
 export async function ask(): Promise<ExpectedAnswers> {
     const { version }: { version: string } = JSON.parse(
@@ -32,8 +31,16 @@ export async function ask(): Promise<ExpectedAnswers> {
             name: 'manager',
             message: 'Which package manage would you use',
             type: 'list',
-            default: 'npm',
-            choices: Managers,
+            default: getCurrentPackageManager(),
+            choices: [
+                { name: 'npm', value: PM.npm },
+                { name: 'yarn', value: PM.yarn },
+                { name: 'pnpm', value: PM.pnpm },
+                {
+                    name: 'none - do not install packages',
+                    value: PM.none,
+                },
+            ],
             prefix: chalk.cyan('>'),
             suffix: '?',
         },
