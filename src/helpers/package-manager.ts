@@ -18,7 +18,7 @@ export enum PM {
 export async function install(pm: Exclude<PM, PM.none>, path: string) {
     const spinner = createSpinner('Installing Packages').start();
 
-    return await promisify(exec)(`cd ${path} && ${pm} ${pm !== PM.yarn ? 'install' : ''}`)
+    return await promisify(exec)(`cd ${path} && ${PM[pm]} ${pm !== PM.yarn ? 'install' : ''}`)
         .then((value) => {
             spinner.success();
             return value;
