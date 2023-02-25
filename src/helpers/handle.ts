@@ -19,7 +19,7 @@ export async function handle(answers: ExpectedAnswers) {
 
     await copy(template, projectPath, answers.manager);
 
-    if (pm !== PM.none) install(pm, projectPath);
+    if (pm !== PM.none) await install(pm, projectPath);
 
     console.log(
         chalk.greenBright('√'),
