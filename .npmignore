@@ -9,3 +9,4 @@ tsconfig.tsbuildinfo
 CHANGELOG.md
 tests/
 dist/scripts
+/vite.config.ts
