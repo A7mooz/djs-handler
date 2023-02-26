@@ -8,3 +8,4 @@ tsconfig.tsbuildinfo
 /.prettierignore
 CHANGELOG.md
 tests/
+dist/scripts
