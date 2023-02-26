@@ -23,7 +23,7 @@ test('Create a project and install dependencies with npm', async () => {
 
     await expect(
         handle({
-            manager: PM.npm,
+            manager: 0,
             name: path,
         }),
     ).resolves.not.toThrowError();
@@ -31,8 +31,6 @@ test('Create a project and install dependencies with npm', async () => {
     expect(existsSync(path)).toBe(true);
 
     const files = await readdir(path);
-
-    console.log(files);
 
     expect(files.every(CheckExpected('npm'))).toBe(true);
 
@@ -63,7 +61,7 @@ test('Create a project and not install dependencies', async () => {
 
     await expect(
         handle({
-            manager: PM.none,
+            manager: 3,
             name: path,
         }),
     ).resolves.not.toThrowError();

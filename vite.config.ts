@@ -4,5 +4,6 @@ export default defineConfig({
     test: {
         dir: 'tests',
         testTimeout: 0,
+        silent: true,
     },
 });
