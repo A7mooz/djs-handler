@@ -11,6 +11,7 @@ const ExpectedFiles = {
     base: ['node_modules'],
     npm: ['package-lock.json'],
     pnpm: ['pnpm-lock.yaml'],
+    yarn: ['yarn.lock'],
 };
 
 const CheckExpected = (pm: string) => (file: string) =>
@@ -52,6 +53,25 @@ test('Create a project and install dependencies with pnpm', async () => {
     const files = await readdir(path);
 
     expect(files.every(CheckExpected('pnpm'))).toBe(true);
+
+    await expect(rm(MAIN_PATH, { recursive: true })).resolves.not.toThrowError();
+});
+
+test('Create a project and install dependencies with yarn', async () => {
+    const path = join(MAIN_PATH, 'yarn');
+
+    await expect(
+        handle({
+            manager: PM.yarn,
+            name: path,
+        }),
+    ).resolves.not.toThrowError();
+
+    expect(existsSync(path)).toBe(true);
+
+    const files = await readdir(path);
+
+    expect(files.every(CheckExpected('yarn'))).toBe(true);
 
     await expect(rm(MAIN_PATH, { recursive: true })).resolves.not.toThrowError();
 });
