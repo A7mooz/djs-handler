@@ -1,5 +1,5 @@
 import { existsSync } from 'fs';
-import { readdir } from 'fs/promises';
+import { readdir, rm } from 'fs/promises';
 import { join } from 'path';
 import { expect, test } from 'vitest';
 import { handle } from '../src/helpers/handle';
@@ -32,7 +32,11 @@ test('Create a project and install dependencies with npm', async () => {
 
     const files = await readdir(path);
 
+    console.log(files);
+
     expect(files.every(CheckExpected('npm'))).toBe(true);
+
+    await expect(rm(MAIN_PATH)).resolves.not.toThrowError();
 });
 
 test('Create a project and install dependencies with pnpm', async () => {
@@ -50,6 +54,8 @@ test('Create a project and install dependencies with pnpm', async () => {
     const files = await readdir(path);
 
     expect(files.every(CheckExpected('pnpm'))).toBe(true);
+
+    await expect(rm(MAIN_PATH)).resolves.not.toThrowError();
 });
 
 test('Create a project and not install dependencies', async () => {
@@ -71,8 +77,6 @@ test('Create a project and not install dependencies', async () => {
             Object.entries(ExpectedFiles).every(([, v]) => !v.includes(file)),
         ),
     ).toBe(true);
-});
 
-// test('Cleaning tests', async () => {
-//     await expect(rm(MAIN_PATH, { recursive: true, force: true })).resolves.not.toThrowError();
-// });
+    await expect(rm(MAIN_PATH)).resolves.not.toThrowError();
+});
