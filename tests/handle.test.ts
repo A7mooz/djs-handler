@@ -36,7 +36,7 @@ test('Create a project and install dependencies with npm', async () => {
 
     expect(files.every(CheckExpected('npm'))).toBe(true);
 
-    await expect(rm(MAIN_PATH)).resolves.not.toThrowError();
+    await expect(rm(MAIN_PATH, { recursive: true })).resolves.not.toThrowError();
 });
 
 test('Create a project and install dependencies with pnpm', async () => {
@@ -55,7 +55,7 @@ test('Create a project and install dependencies with pnpm', async () => {
 
     expect(files.every(CheckExpected('pnpm'))).toBe(true);
 
-    await expect(rm(MAIN_PATH)).resolves.not.toThrowError();
+    await expect(rm(MAIN_PATH, { recursive: true })).resolves.not.toThrowError();
 });
 
 test('Create a project and not install dependencies', async () => {
@@ -78,5 +78,5 @@ test('Create a project and not install dependencies', async () => {
         ),
     ).toBe(true);
 
-    await expect(rm(MAIN_PATH)).resolves.not.toThrowError();
+    await expect(rm(MAIN_PATH, { recursive: true })).resolves.not.toThrowError();
 });

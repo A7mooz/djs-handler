@@ -4,7 +4,5 @@ export default defineConfig({
     test: {
         dir: 'tests',
         testTimeout: 0,
-        clearMocks: true,
-        silent: true,
     },
 });
