@@ -1,4 +1,5 @@
 # A7mooz's DISCORD.JS HANDLER
+
 <div>
   <div align="center" class="badge-container">
     <a href="https://www.npmjs.com/package/@a7mooz/create-djs-handler"
@@ -64,3 +65,15 @@ yarn dev
 ```
 pnpm dev
 ```
+
+<!-- MARKDOWN LINKS & IMAGES -->
+<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+
+[contributors-shield]: https://img.shields.io/github/contributors/a7mooz/djs-handler.svg?style=for-the-badge
+[contributors-url]: https://github.com/a7mooz/djs-handler/graphs/contributors
+[stars-shield]: https://img.shields.io/github/stars/a7mooz/djs-handler.svg?style=for-the-badge
+[stars-url]: https://github.com/a7mooz/djs-handler/stargazers
+[issues-shield]: https://img.shields.io/github/issues/a7mooz/djs-handler.svg?style=for-the-badge
+[issues-url]: https://github.com/a7mooz/djs-handler/issues
+[license-shield]: https://img.shields.io/github/license/a7mooz/djs-handler.svg?style=for-the-badge
+[license-url]: https://github.com/a7mooz/djs-handler/blob/main/LICENSE.txt
