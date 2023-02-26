@@ -23,7 +23,7 @@ test('Create a project and install dependencies with npm', async () => {
 
     await expect(
         handle({
-            manager: 0,
+            manager: PM.npm,
             name: path,
         }),
     ).resolves.not.toThrowError();
@@ -61,7 +61,7 @@ test('Create a project and not install dependencies', async () => {
 
     await expect(
         handle({
-            manager: 3,
+            manager: PM.none,
             name: path,
         }),
     ).resolves.not.toThrowError();

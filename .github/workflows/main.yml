@@ -32,4 +32,4 @@ jobs:
                   node-version: 18.x
                   cache: 'pnpm'
             - run: pnpm install --frozen-lockfile
-            - run: pnpm check-templates && pnpm test
+            - run: pnpm check-templates && pnpm clean && pnpm test
