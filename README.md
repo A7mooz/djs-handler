@@ -1,4 +1,23 @@
-# DISCORD.JS HANDLER
+# A7mooz's DISCORD.JS HANDLER
+<div>
+  <div align="center" class="badge-container">
+    <a href="https://www.npmjs.com/package/@a7mooz/create-djs-handler"
+      ><img
+        src="https://img.shields.io/npm/v/@a7mooz/create-djs-handler.svg?maxAge=3600"
+        alt="NPM version"
+    /></a>
+    <a href="https://www.npmjs.com/package/@a7mooz/create-djs-handler"
+      ><img
+        src="https://img.shields.io/npm/dt/@a7mooz/create-djs-handler.svg?maxAge=3600"
+        alt="NPM downloads"
+    /></a>
+    <a href="https://github.com/a7mooz/djs-handler/actions"
+      ><img
+        src="https://github.com/a7mooz/djs-handler/workflows/CI/badge.svg"
+        alt="Build status"
+    /></a>
+  </div>
+</div>
 
 ## Initiate
 
