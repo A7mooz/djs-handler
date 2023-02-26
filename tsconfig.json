@@ -1,10 +1,8 @@
 {
     "compilerOptions": {
         "incremental": true,
-        "tsBuildInfoFile": "dist/tsconfig.tsbuildinfo",
         "target": "ESNext",
         "module": "NodeNext",
-        "rootDir": "src",
         "resolveJsonModule": true,
         "outDir": "dist",
         "allowSyntheticDefaultImports": true,
@@ -16,5 +14,5 @@
         "alwaysStrict": true,
         "skipLibCheck": true
     },
-    "exclude": ["templates", "test"]
+    "exclude": ["templates", "vite.config.ts", "tests"]
 }

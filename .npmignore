@@ -7,3 +7,4 @@ pnpm-lock.yml
 tsconfig.tsbuildinfo
 /.prettierignore
 CHANGELOG.md
+tests/

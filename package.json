@@ -7,14 +7,16 @@
     "type": "module",
     "private": false,
     "scripts": {
-        "build": "rimraf dist && tsc",
-        "clean": "node dist/helpers/clean",
-        "check-templates": "cd templates/TypeScript && pnpm i --silent && pnpm build",
         "start": "node .",
-        "dev": "pnpm build --inlineSourceMap && pnpm clean && pnpm start",
+        "test": "vitest run",
+        "test:watch": "vitest",
         "pretty": "prettier -w .",
+        "build": "rimraf dist && tsc",
         "lint": "eslint --fix src/**/*.ts",
-        "release": "pnpm lint && pnpm build && pnpm check-templates && pnpm clean && changeset publish"
+        "clean": "node dist/helpers/clean",
+        "dev": "pnpm build --inlineSourceMap && pnpm clean && pnpm start",
+        "check-templates": "cd templates/TypeScript && pnpm i --silent && pnpm build",
+        "release": "pnpm build && changeset publish"
     },
     "repository": {
         "type": "git",
@@ -47,10 +49,11 @@
         "@types/validate-npm-package-name": "^4.0.0",
         "@typescript-eslint/eslint-plugin": "^5.53.0",
         "@typescript-eslint/parser": "^5.53.0",
-        "eslint": "^8.34.0",
+        "eslint": "^8.35.0",
         "prettier": "^2.8.4",
         "rimraf": "^4.1.2",
-        "typescript": "^4.9.5"
+        "typescript": "^4.9.5",
+        "vitest": "^0.29.1"
     },
     "prettier": {
         "semi": true,
