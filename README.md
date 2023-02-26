@@ -1,4 +1,4 @@
-# A7mooz's DISCORD.JS HANDLER
+<h1 align="center"> A7MOOZ'S DISCORD.JS HANDLER </h1>
 
 <div>
   <div align="center" class="badge-container">
