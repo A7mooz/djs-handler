@@ -1,5 +1,5 @@
 import { existsSync } from 'fs';
-import { readdir, rm } from 'fs/promises';
+import { readdir } from 'fs/promises';
 import { join } from 'path';
 import { expect, test } from 'vitest';
 import { handle } from '../src/helpers/handle';
@@ -73,6 +73,6 @@ test('Create a project and not install dependencies', async () => {
     ).toBe(true);
 });
 
-test('Cleaning tests', async () => {
-    await expect(rm(MAIN_PATH, { recursive: true, force: true })).resolves.not.toThrowError();
-});
+// test('Cleaning tests', async () => {
+//     await expect(rm(MAIN_PATH, { recursive: true, force: true })).resolves.not.toThrowError();
+// });
