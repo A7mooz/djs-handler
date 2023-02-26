@@ -1,11 +1,11 @@
 import { existsSync } from 'fs';
 import { readdir, rm } from 'fs/promises';
-import { join } from 'path';
+import { join, resolve } from 'path';
 import { expect, test } from 'vitest';
 import { handle } from '../src/helpers/handle';
 import { PM } from '../src/helpers/package-manager';
 
-const MAIN_PATH = 'tests/coverage';
+const MAIN_PATH = resolve('tests/coverage');
 
 const ExpectedFiles = {
     base: ['node_modules'],
