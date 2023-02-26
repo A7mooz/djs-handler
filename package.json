@@ -13,7 +13,7 @@
         "pretty": "prettier -w .",
         "build": "rimraf dist && tsc",
         "lint": "eslint --fix src/**/*.ts",
-        "clean": "node scripts/clean.js",
+        "clean": "node dist/scripts/clean.js",
         "dev": "pnpm build --inlineSourceMap && pnpm clean && pnpm start",
         "check-templates": "cd templates/TypeScript && pnpm i --silent && pnpm build",
         "release": "pnpm build && changeset publish"
