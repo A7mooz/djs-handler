@@ -17,7 +17,7 @@ export async function handle(answers: ExpectedAnswers) {
 
     const pm = answers.manager;
 
-    await copy(template, projectPath, answers.manager);
+    await copy(template, projectPath, pm);
 
     if (pm !== PM.none) await install(pm, projectPath);
 
@@ -32,7 +32,7 @@ export async function handle(answers: ExpectedAnswers) {
     console.log(`\t> // Set your environment variables in .env (example in .env.example)`);
     console.log(`\t> cd ${path.relative(process.cwd(), projectPath)}`);
 
-    if (pm !== PM.none) console.log(`\t> ${pm} run dev`);
+    if (pm !== PM.none) console.log(`\t> ${PM[pm]} run dev`);
     else {
         console.log('\t> npm install');
         console.log('\t> npm run dev');
