@@ -1,5 +1,12 @@
 # @a7mooz/create-djs-handler
 
+## 0.1.14
+
+### Patch Changes
+
+-   1d63b77: Changed ts-toolbelt to dev deps
+-   42d2137: Fixed the instructions
+
 ## 0.1.13
 
 ### Patch Changes
