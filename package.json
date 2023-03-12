@@ -7,7 +7,7 @@
     "type": "module",
     "private": false,
     "scripts": {
-        "start": "node .",
+        "start": "node --enable-source-maps .",
         "test": "vitest run",
         "test:watch": "vitest",
         "pretty": "prettier -w .",
