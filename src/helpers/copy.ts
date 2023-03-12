@@ -31,6 +31,8 @@ export async function copy(template: string, path: string, pm: PM) {
 
             await fs.writeFile(packageJsonUrl, JSON.stringify(pkg, null, 4));
 
+            await fs.cp(join(path, '.env.example'), join(path, '.env'));
+
             spinner.success();
         })
         .catch((err: Error) => {
