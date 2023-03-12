@@ -1,5 +1,12 @@
 # @a7mooz/create-djs-handler
 
+## 0.1.15
+
+### Patch Changes
+
+-   2f31b36: Copying .env from .env.example
+-   b0e7b09: Improved CTRL+C handling
+
 ## 0.1.14
 
 ### Patch Changes
