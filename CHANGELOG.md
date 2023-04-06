@@ -1,5 +1,11 @@
 # @a7mooz/create-djs-handler
 
+## 0.1.16
+
+### Patch Changes
+
+-   1624bb3: Updated discord.js
+
 ## 0.1.15
 
 ### Patch Changes
