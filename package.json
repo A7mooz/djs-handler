@@ -1,6 +1,6 @@
 {
     "name": "@a7mooz/create-djs-handler",
-    "version": "0.1.16",
+    "version": "0.1.17",
     "description": "A cli tool that helps you build strongly typed discord.js handler inspired by WOKCommands",
     "main": "dist/index.js",
     "bin": "dist/index.js",

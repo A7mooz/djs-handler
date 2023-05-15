@@ -1,5 +1,11 @@
 # @a7mooz/create-djs-handler
 
+## 0.1.17
+
+### Patch Changes
+
+-   690c73b: Updated template deps
+
 ## 0.1.16
 
 ### Patch Changes
