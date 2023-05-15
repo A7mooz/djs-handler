@@ -1,4 +1,4 @@
-import rimraf from 'rimraf';
+import { rimraf } from 'rimraf';
 import { templates, templatesDir } from '../helpers/templates.js';
 import { join } from 'path';
 
