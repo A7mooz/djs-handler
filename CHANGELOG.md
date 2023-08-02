@@ -1,5 +1,11 @@
 # @a7mooz/create-djs-handler
 
+## 0.1.18
+
+### Patch Changes
+
+-   e0124e9: Updated template dependencies
+
 ## 0.1.17
 
 ### Patch Changes
