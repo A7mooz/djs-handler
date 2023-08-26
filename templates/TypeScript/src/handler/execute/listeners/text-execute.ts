@@ -1,5 +1,5 @@
 import { CommandType, Listener, Command } from '#handler';
-import { CacheType, MessageManager } from 'discord.js';
+import { CacheType } from 'discord.js';
 import type { Send } from '#types/command';
 import conditions from '../preconditions/index.js';
 
@@ -44,25 +44,21 @@ export default new Listener({
                     content: options,
                 };
 
-            if (!options.new || message.editedAt) {
-                const reply = (<MessageManager>message.channel.messages).cache.find(
-                    (v) => v.reference?.messageId === message.id && v.author.id === client.user.id,
-                );
+            const reply = message.channel.messages.cache.find(
+                (v) => v.reference?.messageId === message.id && v.author.id === client.user.id,
+            );
 
-                if (reply) {
-                    return reply.edit({
-                        embeds: [],
-                        files: [],
-                        components: [],
-                        content: null,
-                        ...options,
-                    });
-                } else {
-                    return message.reply(options as object);
-                }
+            if (options.new || !reply || !message.editedAt) {
+                return message.reply(options as object);
             }
 
-            return message.reply(options);
+            return reply?.edit({
+                embeds: [],
+                files: [],
+                components: [],
+                content: null,
+                ...(options as object),
+            });
         };
 
         const context = {

@@ -20,7 +20,7 @@ type SendOptions<T extends CommandType> = T extends CommandType.Text
     ? (DJS.MessageReplyOptions & { new: true }) | (DJS.MessageEditOptions & { new?: false })
     :
           | (DJS.InteractionReplyOptions & { new: true })
-          | (DJS.WebhookEditMessageOptions & { new?: false });
+          | (DJS.InteractionEditReplyOptions & { new?: false });
 
 type Send<T extends CommandType, Cached extends DJS.CacheType> = (
     options: SendOptions<T> | string,
