@@ -15,7 +15,7 @@
         "lint": "eslint --fix src/**/*.ts",
         "clean": "node dist/scripts/clean.js",
         "dev": "pnpm build --inlineSourceMap && pnpm clean && pnpm start",
-        "check-templates": "cd templates/TypeScript && pnpm i --silent && pnpm build",
+        "check-templates": "cd templates/TypeScript && pnpm i --silent && pnpm typecheck",
         "release": "pnpm build && changeset publish"
     },
     "repository": {
@@ -38,7 +38,7 @@
     "dependencies": {
         "chalk": "^5.3.0",
         "figlet": "^1.6.0",
-        "inquirer": "^9.2.9",
+        "inquirer": "^9.2.10",
         "nanospinner": "^1.1.0",
         "validate-npm-package-name": "^5.0.0"
     },
@@ -47,13 +47,13 @@
         "@types/figlet": "^1.5.6",
         "@types/inquirer": "^9.0.3",
         "@types/validate-npm-package-name": "^4.0.0",
-        "@typescript-eslint/eslint-plugin": "^6.2.1",
-        "@typescript-eslint/parser": "^6.2.1",
-        "eslint": "^8.46.0",
-        "prettier": "^3.0.0",
+        "@typescript-eslint/eslint-plugin": "^6.4.1",
+        "@typescript-eslint/parser": "^6.4.1",
+        "eslint": "^8.48.0",
+        "prettier": "^3.0.2",
         "rimraf": "^5.0.1",
-        "typescript": "^5.1.6",
-        "vitest": "^0.34.1"
+        "typescript": "^5.2.2",
+        "vitest": "^0.34.3"
     },
     "prettier": {
         "semi": true,

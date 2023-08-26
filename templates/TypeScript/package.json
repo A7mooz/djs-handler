@@ -9,6 +9,7 @@
     },
     "scripts": {
         "build": "tsc -b",
+        "typecheck": "tsc --noEmit --skipLibCheck false",
         "start": "node .",
         "dev": "tsc --inlineSourceMap && node .",
         "watch": "nodemon -e ts,json -x  \"tsc -b && node .\"",
@@ -16,23 +17,17 @@
     },
     "devDependencies": {
         "@types/ms": "^0.7.31",
-        "@types/node": "^20.4.5",
+        "@types/node": "^20.5.6",
         "nodemon": "^3.0.1",
-        "prettier": "^3.0.0",
+        "prettier": "^3.0.2",
         "ts-toolbelt": "^9.6.0",
-        "typescript": "^5.1.6"
+        "typescript": "^5.2.2"
     },
     "dependencies": {
-        "discord.js": "^14.12.1",
+        "discord.js": "^14.13.0",
         "dotenv": "^16.3.1",
-        "mongoose": "^7.4.1",
+        "mongoose": "^7.4.5",
         "ms": "^2.1.3"
-    },
-    "resolutions": {
-        "discord-api-types": "0.37.20"
-    },
-    "overrides": {
-        "discord-api-types": "0.37.20"
     },
     "prettier": {
         "semi": true,
