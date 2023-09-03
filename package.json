@@ -18,6 +18,9 @@
         "check-templates": "cd templates/TypeScript && pnpm i --silent && pnpm typecheck",
         "release": "pnpm build && changeset publish"
     },
+    "files": [
+        "dist"
+    ],
     "repository": {
         "type": "git",
         "url": "git+https://github.com/A7mooz/djs-handler.git"
