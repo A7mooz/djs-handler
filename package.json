@@ -13,10 +13,10 @@
         "pretty": "prettier -w .",
         "build": "rimraf dist && tsc",
         "lint": "eslint --fix src/**/*.ts",
-        "clean": "node dist/scripts/clean.js",
-        "dev": "pnpm build --inlineSourceMap && pnpm clean && pnpm start",
-        "check-templates": "cd templates/TypeScript && pnpm i --silent && pnpm typecheck",
-        "release": "pnpm build && changeset publish"
+        "clean": "node --enable-source-maps dist/scripts/clean.js",
+        "dev": "pnpm build && pnpm clean && pnpm start",
+        "check-templates": "pnpm tsc -p templates/TypeScript",
+        "release": "pnpm build --incremental false && changeset publish"
     },
     "files": [
         "dist"

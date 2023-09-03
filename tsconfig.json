@@ -10,6 +10,7 @@
         "forceConsistentCasingInFileNames": true,
         "strict": true,
         "noImplicitAny": true,
+        "sourceMap": true,
         "strictNullChecks": true,
         "alwaysStrict": true,
         "skipLibCheck": true
