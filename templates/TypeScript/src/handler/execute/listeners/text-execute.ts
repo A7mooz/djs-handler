@@ -52,12 +52,12 @@ export default new Listener({
                 return message.reply(options as object);
             }
 
-            return reply?.edit({
+            return reply.edit({
                 embeds: [],
                 files: [],
                 components: [],
                 content: null,
-                ...(options as object),
+                ...options,
             });
         };
 
