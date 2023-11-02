@@ -13,13 +13,14 @@
         "pretty": "prettier -w .",
         "build": "rimraf dist && tsc",
         "lint": "eslint --fix src/**/*.ts",
-        "clean": "node --enable-source-maps dist/scripts/clean.js",
-        "dev": "pnpm build && pnpm clean && pnpm start",
-        "check-templates": "cd templates/TypeScript && pnpm i --silent && pnpm typecheck",
-        "release": "pnpm build --incremental false && changeset publish"
+        "clean": "rimraf -g templates/*/{node_modules,pnpm-lock.yaml,yarn.lock,package-lock.json,dist}",
+        "dev": "pnpm build && pnpm start",
+        "check-templates": "node --loader ts-node/esm --no-warnings scripts/check-templates.ts && pnpm run clean",
+        "release": "pnpm build --incremental false --sourceMap false && changeset publish"
     },
     "files": [
-        "dist"
+        "dist",
+        "templates"
     ],
     "repository": {
         "type": "git",
@@ -49,12 +50,14 @@
         "@changesets/cli": "^2.26.2",
         "@types/figlet": "^1.5.6",
         "@types/inquirer": "^9.0.3",
+        "@types/node": "^18.18.7",
         "@types/validate-npm-package-name": "^4.0.0",
         "@typescript-eslint/eslint-plugin": "^6.4.1",
         "@typescript-eslint/parser": "^6.4.1",
         "eslint": "^8.48.0",
         "prettier": "^3.0.2",
         "rimraf": "^5.0.1",
+        "ts-node": "^10.9.1",
         "typescript": "^5.2.2",
         "vitest": "^0.34.3"
     },
