@@ -1,8 +1,9 @@
 {
     "compilerOptions": {
         "incremental": true,
-        "target": "ESNext",
-        "module": "NodeNext",
+        "target": "ES2022",
+        "lib": ["ES2022"],
+        "module": "Node16",
         "resolveJsonModule": true,
         "outDir": "dist",
         "allowSyntheticDefaultImports": true,
@@ -15,5 +16,5 @@
         "alwaysStrict": true,
         "skipLibCheck": true
     },
-    "exclude": ["templates", "vite.config.ts", "tests"]
+    "include": ["src"]
 }

@@ -1,6 +1,6 @@
 {
     "compilerOptions": {
-        "target": "ESNext",
+        "target": "ES2022",
         "module": "Node16",
         "rootDir": "src",
         "baseUrl": "src",
@@ -19,7 +19,6 @@
         "strictNullChecks": true,
         "skipLibCheck": true,
         "useDefineForClassFields": false,
-        "tsBuildInfoFile": "dist/tsconfig.tsbuildinfo",
-        "types": ["node", "ms"]
+        "tsBuildInfoFile": "dist/tsconfig.tsbuildinfo"
     }
 }
