@@ -1,5 +1,12 @@
 # @a7mooz/create-djs-handler
 
+## 0.1.20
+
+### Patch Changes
+
+-   793605b: Ignored useless files
+-   f39a8ea: Removed unnecessary code
+
 ## 0.1.19
 
 ### Patch Changes
