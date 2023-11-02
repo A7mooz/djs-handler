@@ -1,5 +1,11 @@
 # @a7mooz/create-djs-handler
 
+## 0.1.21
+
+### Patch Changes
+
+-   1cbb69d: Improved security and reduced code of installation
+
 ## 0.1.20
 
 ### Patch Changes
